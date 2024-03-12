@@ -1,0 +1,3 @@
+[submodule "node-game-backend"]
+	path = node-game-backend
+	url = https://github.com/pickleberto/node-game-backend.git
