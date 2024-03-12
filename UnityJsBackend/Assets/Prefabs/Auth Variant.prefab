@@ -139,7 +139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826050814452503756, guid: a4049b1fdd96d924f96ccf7d6fe2c50e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5826050814452503756, guid: a4049b1fdd96d924f96ccf7d6fe2c50e, type: 3}
       propertyPath: m_AnchorMin.x
@@ -147,7 +147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826050814452503756, guid: a4049b1fdd96d924f96ccf7d6fe2c50e, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5826050814452503756, guid: a4049b1fdd96d924f96ccf7d6fe2c50e, type: 3}
       propertyPath: m_SizeDelta.x
@@ -187,11 +187,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826050814452503756, guid: a4049b1fdd96d924f96ccf7d6fe2c50e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 175
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5826050814452503756, guid: a4049b1fdd96d924f96ccf7d6fe2c50e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -505.625
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5826050814452503756, guid: a4049b1fdd96d924f96ccf7d6fe2c50e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -207,13 +207,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8917974235735830168, guid: a4049b1fdd96d924f96ccf7d6fe2c50e, type: 3}
       propertyPath: m_Name
-      value: Button
+      value: RegisterButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4049b1fdd96d924f96ccf7d6fe2c50e, type: 3}
+--- !u!114 &1358286320722088090 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1592138409736020441, guid: a4049b1fdd96d924f96ccf7d6fe2c50e, type: 3}
+  m_PrefabInstance: {fileID: 342822523940614467}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6060641262034920847 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5826050814452503756, guid: a4049b1fdd96d924f96ccf7d6fe2c50e, type: 3}
@@ -227,6 +238,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5502272844426698610}
     m_Modifications:
+    - target: {fileID: 1763510678071781257, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
+      propertyPath: m_Name
+      value: PasswordInput
+      objectReference: {fileID: 0}
     - target: {fileID: 2547697639105463660, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_text
       value: Password
@@ -245,7 +260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchorMin.x
@@ -253,7 +268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -293,11 +308,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 175
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -225
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -328,6 +343,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
+--- !u!114 &4005389437984889802 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8330274042230751127, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
+  m_PrefabInstance: {fileID: 4903597988986938461}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &8475464104091627791 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
@@ -347,7 +373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1565941286125127240, guid: 8961ed609b7e76d41bd5d7abc6f025a6, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6791664771909380037, guid: 8961ed609b7e76d41bd5d7abc6f025a6, type: 3}
       propertyPath: m_Pivot.x
@@ -442,13 +468,40 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6791664771909380037, guid: 8961ed609b7e76d41bd5d7abc6f025a6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1426701964769186567}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1565941286125127240, guid: 8961ed609b7e76d41bd5d7abc6f025a6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3382914591830512297}
   m_SourcePrefab: {fileID: 100100000, guid: 8961ed609b7e76d41bd5d7abc6f025a6, type: 3}
 --- !u!224 &1014558496020467925 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6791664771909380037, guid: 8961ed609b7e76d41bd5d7abc6f025a6, type: 3}
   m_PrefabInstance: {fileID: 5788454504111732496}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5039510383972168024 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1565941286125127240, guid: 8961ed609b7e76d41bd5d7abc6f025a6, type: 3}
+  m_PrefabInstance: {fileID: 5788454504111732496}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3382914591830512297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5039510383972168024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 666ed8dc15bead84fa20a83996ca33f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loginUsername: {fileID: 480028142168447693}
+  loginPassword: {fileID: 4005389437984889802}
+  loginButton: {fileID: 4636313242946504648}
+  registerUsername: {fileID: 2301228567579554147}
+  registerEmail: {fileID: 2239166795580637829}
+  registerPassword: {fileID: 1191804159266794960}
+  registerButton: {fileID: 1358286320722088090}
 --- !u!1001 &6219215063217481233
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -475,7 +528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826050814452503756, guid: a4049b1fdd96d924f96ccf7d6fe2c50e, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5826050814452503756, guid: a4049b1fdd96d924f96ccf7d6fe2c50e, type: 3}
       propertyPath: m_AnchorMin.x
@@ -483,7 +536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826050814452503756, guid: a4049b1fdd96d924f96ccf7d6fe2c50e, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5826050814452503756, guid: a4049b1fdd96d924f96ccf7d6fe2c50e, type: 3}
       propertyPath: m_SizeDelta.x
@@ -523,11 +576,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5826050814452503756, guid: a4049b1fdd96d924f96ccf7d6fe2c50e, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 175
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5826050814452503756, guid: a4049b1fdd96d924f96ccf7d6fe2c50e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -355
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5826050814452503756, guid: a4049b1fdd96d924f96ccf7d6fe2c50e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -543,7 +596,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8917974235735830168, guid: a4049b1fdd96d924f96ccf7d6fe2c50e, type: 3}
       propertyPath: m_Name
-      value: Button
+      value: LoginButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -555,6 +608,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5826050814452503756, guid: a4049b1fdd96d924f96ccf7d6fe2c50e, type: 3}
   m_PrefabInstance: {fileID: 6219215063217481233}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4636313242946504648 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1592138409736020441, guid: a4049b1fdd96d924f96ccf7d6fe2c50e, type: 3}
+  m_PrefabInstance: {fileID: 6219215063217481233}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6868305330312731675
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -677,6 +741,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1426701964769186567}
     m_Modifications:
+    - target: {fileID: 1763510678071781257, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
+      propertyPath: m_Name
+      value: PasswordRegister
+      objectReference: {fileID: 0}
     - target: {fileID: 2547697639105463660, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_text
       value: Password
@@ -695,7 +763,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchorMin.x
@@ -703,7 +771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -743,11 +811,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 175
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -376.875
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -778,6 +846,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
+--- !u!114 &1191804159266794960 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8330274042230751127, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
+  m_PrefabInstance: {fileID: 7138547952657371719}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5945532556289656597 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
@@ -791,6 +870,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1426701964769186567}
     m_Modifications:
+    - target: {fileID: 1763510678071781257, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
+      propertyPath: m_Name
+      value: UsernameRegister
+      objectReference: {fileID: 0}
     - target: {fileID: 2547697639105463660, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_text
       value: Username
@@ -809,7 +892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchorMin.x
@@ -817,7 +900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -857,11 +940,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 175
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -69.375
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -884,6 +967,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
+--- !u!114 &2301228567579554147 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8330274042230751127, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
+  m_PrefabInstance: {fileID: 7815028670478503668}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6766516581201288102 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
@@ -897,6 +991,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1426701964769186567}
     m_Modifications:
+    - target: {fileID: 1763510678071781257, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
+      propertyPath: m_Name
+      value: EmailRegister
+      objectReference: {fileID: 0}
     - target: {fileID: 2547697639105463660, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_text
       value: Email
@@ -915,7 +1013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchorMin.x
@@ -923,7 +1021,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -963,11 +1061,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 175
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -223.125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -990,6 +1088,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
+--- !u!114 &2239166795580637829 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8330274042230751127, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
+  m_PrefabInstance: {fileID: 7820512080162536722}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &6709232718198827072 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
@@ -1003,6 +1112,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5502272844426698610}
     m_Modifications:
+    - target: {fileID: 1763510678071781257, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
+      propertyPath: m_Name
+      value: UsernameInput
+      objectReference: {fileID: 0}
     - target: {fileID: 2547697639105463660, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_text
       value: Username
@@ -1021,7 +1134,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1029,7 +1142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1069,11 +1182,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 175
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1096,6 +1209,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
+--- !u!114 &480028142168447693 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8330274042230751127, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
+  m_PrefabInstance: {fileID: 8444938790689449306}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &4945377657591197704 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3572464810997470546, guid: 52963303ee322084ea56bfc56d87eff8, type: 3}
