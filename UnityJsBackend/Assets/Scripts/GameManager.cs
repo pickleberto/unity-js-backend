@@ -28,9 +28,10 @@ public class GameManager : MonoBehaviour
         OpenAuthScreen();
     }
 
-    public void SetJwtToken(string token)
+    public void StartSession(string token)
     {
         JwtToken = token;
+        OpenSelectScreen();
     }
 
     public void OpenAuthScreen()

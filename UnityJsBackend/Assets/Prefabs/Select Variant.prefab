@@ -274,14 +274,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8897432346597753915, guid: b55874a9a90fed84e80eea1748d92d81, type: 3}
-      propertyPath: m_CellSize.x
-      value: 250
-      objectReference: {fileID: 0}
-    - target: {fileID: 8897432346597753915, guid: b55874a9a90fed84e80eea1748d92d81, type: 3}
-      propertyPath: m_CellSize.y
-      value: 250
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -514,10 +506,32 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6791664771909380037, guid: 8961ed609b7e76d41bd5d7abc6f025a6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1058046597737493315}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1565941286125127240, guid: 8961ed609b7e76d41bd5d7abc6f025a6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2540761776760003893}
   m_SourcePrefab: {fileID: 100100000, guid: 8961ed609b7e76d41bd5d7abc6f025a6, type: 3}
 --- !u!224 &3851674684844041051 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6791664771909380037, guid: 8961ed609b7e76d41bd5d7abc6f025a6, type: 3}
   m_PrefabInstance: {fileID: 7724573415751746718}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &9117649414433030870 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1565941286125127240, guid: 8961ed609b7e76d41bd5d7abc6f025a6, type: 3}
+  m_PrefabInstance: {fileID: 7724573415751746718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2540761776760003893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9117649414433030870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6ede997ac7cf234ebdb0ca2224e478c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterRoster: {fileID: 8391196330925561230}
+  prefab: {fileID: 6296486350459589853, guid: fc26e14e2ecd8af4a8ddb25f020c2198, type: 3}

@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class SocketManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static SocketManager Instance { get; private set; }
+    private readonly string connectionUrl = "http://localhost:1337";
+    public static string ConnectionUrl { get{return Instance.connectionUrl;} }
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
