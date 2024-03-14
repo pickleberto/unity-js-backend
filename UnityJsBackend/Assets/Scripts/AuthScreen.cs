@@ -45,15 +45,14 @@ public class AuthScreen : MonoBehaviour
 
         if(request.result != UnityWebRequest.Result.Success)
         {
-            Debug.Log("Login failed");
+            Debug.Log("Login failed: " + request.error);
             yield break;
         }
 
         var res = Encoding.UTF8.GetString(request.downloadHandler.data);
         var resObj = JObject.Parse(res);
-        Debug.Log(resObj);
-
-        GameManager.Instance.StartSession(resObj["jwt"].ToString());
+        
+        GameManager.Instance.StartSession(resObj["jwt"].ToString(), resObj["user"]);
     }
 
     public void Register()

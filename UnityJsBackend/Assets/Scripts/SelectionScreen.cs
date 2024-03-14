@@ -4,16 +4,31 @@ using UnityEngine;
 using UnityEngine.Networking;
 using System.Text;
 using Newtonsoft.Json.Linq;
+using TMPro;
+using UnityEngine.UI;
 
 public class SelectionScreen : MonoBehaviour
 {
+    [Header("User info")]
+    [SerializeField] private TMP_Text usernameText;
+    [SerializeField] private TMP_Text xpText;
+    [SerializeField] private TMP_Text winLossText;
+
+    [Header("Roster")]
     [SerializeField] private Transform characterRoster;
-    [SerializeField] private GameObject prefab;
+    [SerializeField] private GameObject characterSelectionPrefab;
+
+    [Header("Selected character")]
+    [SerializeField] private TMP_Text nameIdText;
+    [SerializeField] private Image selectedPic;
 
     private readonly string CHARACTERS_ENDPOINT = "/api/characters";
 
-    private void Start()
+    private CharacterData[] characters;
+
+    private void OnEnable()
     {
+        SetUserInfoValues();
         StartCoroutine(PopulateCharacters());
     }
 
@@ -24,11 +39,36 @@ public class SelectionScreen : MonoBehaviour
         
         if (request.result != UnityWebRequest.Result.Success)
         {
-            Debug.Log("Failed to fetch characters");
+            Debug.Log("Failed to fetch characters: " + request.error);
             yield break;
         }
 
         var response = Encoding.UTF8.GetString(request.downloadHandler.data);
-        var charactersList = JObject.Parse(response);
+        var responseObj = JObject.Parse(response);
+
+        characters = responseObj["data"].ToObject<CharacterData[]>();
+
+        foreach(var character in characters)
+        {
+            var obj = Instantiate(characterSelectionPrefab);
+            obj.transform.SetParent(characterRoster);
+            obj.GetComponent<SelectionCharacter>().Populate(character);
+            obj.GetComponent<SelectionCharacter>().OnSelected += SetSelectedCharacter;
+        }
+    }
+
+    private void SetUserInfoValues()
+    {
+        usernameText.text = GameManager.Instance.User.UserName;
+        xpText.text = GameManager.Instance.User.Experience + " XP";
+        winLossText.text = GameManager.Instance.User.Wins + ":" + GameManager.Instance.User.Losses;
+    }
+
+    private void SetSelectedCharacter(CharacterData selected, Sprite img)
+    {
+        if (selected == null) return;
+
+        nameIdText.text = selected.Id + ": " + selected.Attributes.Name;
+        selectedPic.sprite = img;
     }
 }

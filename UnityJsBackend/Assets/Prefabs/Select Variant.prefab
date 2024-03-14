@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3851674684844041051}
     m_Modifications:
+    - target: {fileID: 1605181878502500605, guid: ca5b04bb1acc8654c9e531b21f81f39a, type: 3}
+      propertyPath: m_Name
+      value: CharNameID
+      objectReference: {fileID: 0}
     - target: {fileID: 4151552582400707652, guid: ca5b04bb1acc8654c9e531b21f81f39a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -34,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4151552582400707652, guid: ca5b04bb1acc8654c9e531b21f81f39a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 900
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 4151552582400707652, guid: ca5b04bb1acc8654c9e531b21f81f39a, type: 3}
       propertyPath: m_SizeDelta.y
@@ -97,11 +101,66 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca5b04bb1acc8654c9e531b21f81f39a, type: 3}
+--- !u!114 &3314909190092978204 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3114770053037746517, guid: ca5b04bb1acc8654c9e531b21f81f39a, type: 3}
+  m_PrefabInstance: {fileID: 376348004673491273}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3592461442817872359 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3811155938099839150, guid: ca5b04bb1acc8654c9e531b21f81f39a, type: 3}
+  m_PrefabInstance: {fileID: 376348004673491273}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &4369698454669368589 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4151552582400707652, guid: ca5b04bb1acc8654c9e531b21f81f39a, type: 3}
   m_PrefabInstance: {fileID: 376348004673491273}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5563020892530242937 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5191203976689411120, guid: ca5b04bb1acc8654c9e531b21f81f39a, type: 3}
+  m_PrefabInstance: {fileID: 376348004673491273}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6113885032406480973 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5900257087775566084, guid: ca5b04bb1acc8654c9e531b21f81f39a, type: 3}
+  m_PrefabInstance: {fileID: 376348004673491273}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6973977405840087932 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7345798719726373429, guid: ca5b04bb1acc8654c9e531b21f81f39a, type: 3}
+  m_PrefabInstance: {fileID: 376348004673491273}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3124342372002714899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -533,5 +592,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6ede997ac7cf234ebdb0ca2224e478c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  usernameText: {fileID: 5563020892530242937}
+  xpText: {fileID: 3592461442817872359}
+  winLossText: {fileID: 3314909190092978204}
   characterRoster: {fileID: 8391196330925561230}
-  prefab: {fileID: 6296486350459589853, guid: fc26e14e2ecd8af4a8ddb25f020c2198, type: 3}
+  characterSelectionPrefab: {fileID: 6296486350459589853, guid: fc26e14e2ecd8af4a8ddb25f020c2198, type: 3}
+  nameIdText: {fileID: 6973977405840087932}
+  selectedPic: {fileID: 6113885032406480973}

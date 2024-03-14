@@ -19,7 +19,7 @@ public class CharacterAttributes
     [JsonProperty("description")]
     public string Description { get; set; }
 
-    [JsonProperty("imageurl")]
+    [JsonProperty("imageUrl")]
     public string ImageUrl { get; set; }
 
     [JsonProperty("createdAt")]
@@ -51,4 +51,16 @@ public class PaginationMeta
 
     [JsonProperty("total")]
     public int Total { get; set; }
+}
+
+public class UserInfo
+{
+    [JsonProperty("username")]
+    public string UserName { get; set; }
+    [JsonProperty("experience")]
+    public string Experience { get; set; }
+    [JsonProperty("wins")]
+    public int Wins { get; set; }
+    [JsonProperty("losses")]
+    public int Losses { get; set; }
 }

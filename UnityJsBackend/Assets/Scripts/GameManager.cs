@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Newtonsoft.Json.Linq;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
     public string JwtToken { get; private set; }
+    public UserInfo User { get; private set; }
 
     [SerializeField] private GameObject authScreen;
     [SerializeField] private GameObject selectScreen;
@@ -28,9 +30,10 @@ public class GameManager : MonoBehaviour
         OpenAuthScreen();
     }
 
-    public void StartSession(string token)
+    public void StartSession(string token, JToken userInfoJson)
     {
         JwtToken = token;
+        User = userInfoJson.ToObject<UserInfo>();
         OpenSelectScreen();
     }
 
