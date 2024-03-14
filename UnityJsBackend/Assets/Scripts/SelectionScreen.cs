@@ -22,9 +22,18 @@ public class SelectionScreen : MonoBehaviour
     [SerializeField] private TMP_Text nameIdText;
     [SerializeField] private Image selectedPic;
 
+    [Header("Search")]
+    [SerializeField] private Button searchBattleBtn;
+
     private readonly string CHARACTERS_ENDPOINT = "/api/characters";
 
     private CharacterData[] characters;
+    private int selectedCharID = 0;
+
+    private void Start()
+    {
+        searchBattleBtn.onClick.AddListener(SearchBattle);
+    }
 
     private void OnEnable()
     {
@@ -68,7 +77,15 @@ public class SelectionScreen : MonoBehaviour
     {
         if (selected == null) return;
 
+        selectedCharID = selected.Id;
         nameIdText.text = selected.Id + ": " + selected.Attributes.Name;
         selectedPic.sprite = img;
     }
+
+
+    private void SearchBattle()
+    {
+        SocketManager.Instance.SearchBattle(selectedCharID);
+    }
+
 }

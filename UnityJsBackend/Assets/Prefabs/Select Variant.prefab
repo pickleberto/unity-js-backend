@@ -449,6 +449,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5826050814452503756, guid: a4049b1fdd96d924f96ccf7d6fe2c50e, type: 3}
   m_PrefabInstance: {fileID: 6806247040442771343}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5218771390566958678 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1592138409736020441, guid: a4049b1fdd96d924f96ccf7d6fe2c50e, type: 3}
+  m_PrefabInstance: {fileID: 6806247040442771343}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7724573415751746718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -599,3 +610,4 @@ MonoBehaviour:
   characterSelectionPrefab: {fileID: 6296486350459589853, guid: fc26e14e2ecd8af4a8ddb25f020c2198, type: 3}
   nameIdText: {fileID: 6973977405840087932}
   selectedPic: {fileID: 6113885032406480973}
+  searchBattleBtn: {fileID: 5218771390566958678}
