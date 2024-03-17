@@ -64,3 +64,8 @@ public class UserInfo
     [JsonProperty("losses")]
     public int Losses { get; set; }
 }
+
+public class SkillData
+{
+
+}

@@ -737,6 +737,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 918694141685697129, guid: 8961ed609b7e76d41bd5d7abc6f025a6, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 918694141685697129, guid: 8961ed609b7e76d41bd5d7abc6f025a6, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b23364717bd563d4f841fe8ff779b3ff, type: 3}
+    - target: {fileID: 918694141685697129, guid: 8961ed609b7e76d41bd5d7abc6f025a6, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8126421
+      objectReference: {fileID: 0}
+    - target: {fileID: 918694141685697129, guid: 8961ed609b7e76d41bd5d7abc6f025a6, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 918694141685697129, guid: 8961ed609b7e76d41bd5d7abc6f025a6, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1565941286125127240, guid: 8961ed609b7e76d41bd5d7abc6f025a6, type: 3}
       propertyPath: m_Name
       value: Battle Variant

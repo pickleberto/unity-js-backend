@@ -12,6 +12,8 @@ public class SocketManager : MonoBehaviour
     private readonly string connectionUrl = "http://localhost:1337";
     public static string ConnectionUrl { get{return Instance.connectionUrl;} }
 
+    private Queue<Action> executeOnMainThreadQueue = new Queue<Action>();
+
     private SocketIOUnity socket;
 
     private void Awake()
@@ -64,7 +66,30 @@ public class SocketManager : MonoBehaviour
             Debug.Log($"{System.DateTime.Now} Reconnecting: attempt = {e}");
         };
         Debug.Log("Connecting...");
+
+        socket.On("startbattle", response => {
+            // we are not on the main thread, so enqueue
+            lock (executeOnMainThreadQueue)
+            {
+                executeOnMainThreadQueue.Enqueue(() =>
+                {
+                    Debug.Log("Start Battle");
+                    Debug.Log(response);
+                    BattleManager.Instance.StartBattle(response);
+                });
+            }
+        });
+
         socket.Connect();
+    }
+
+    private void Update()
+    {
+        // now we are on the main thread, so execute queue
+        while(executeOnMainThreadQueue.Count > 0)
+        {
+            executeOnMainThreadQueue.Dequeue().Invoke();
+        }
     }
 
     public void SearchBattle(int characterId)
@@ -74,5 +99,15 @@ public class SocketManager : MonoBehaviour
         searchBattleObj.Add("jwt", GameManager.Instance.JwtToken);
 
         socket.Emit("searchBattle", searchBattleObj);
+    }
+
+    public void SendTurn(int skillSlot) 
+    {
+        var turnObject = new JObject
+        {
+            { "jwt", GameManager.Instance.JwtToken },
+            { "skillSlot", skillSlot }
+        };
+        socket.Emit("sendTurn", turnObject);
     }
 }
