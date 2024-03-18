@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using SocketIOClient;
+using Newtonsoft.Json.Linq;
 
 public class BattleManager : MonoBehaviour
 {
@@ -10,8 +11,8 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private GameObject skillPrefab;
     [SerializeField] private Transform skillRoster;
     
-    [SerializeField] private Image player1Image;
-    [SerializeField] private Image player2Image;
+    [SerializeField] private BattleCharacter localPlayer;
+    [SerializeField] private BattleCharacter remotePlayer;
 
     public static BattleManager Instance { get; private set; }
 
@@ -31,5 +32,27 @@ public class BattleManager : MonoBehaviour
     {
         GameManager.Instance.OpenBattleScreen();
 
+        JObject outerData = JObject.Parse(resp.GetValue<JObject>().ToString());
+
+        var localPlayerData = JObject.Parse(outerData["left"].Value<string>());
+        localPlayer.Populate(localPlayerData);
+        remotePlayer.Populate(JObject.Parse(outerData["right"].Value<string>()));
+
+        UpdateLocalPlayerSkills((JArray) localPlayerData["character"]["skills"]);
+    }
+
+    void UpdateLocalPlayerSkills(JArray skills)
+    {
+        foreach(Transform child in skillRoster)
+        {
+            Destroy(child.gameObject);
+        }
+
+        for (int i = 0; i < skills.Count; i++)
+        {
+            JObject skill = (JObject)skills[i];
+            GameObject skillObj = Instantiate(skillPrefab, skillRoster);
+            skillObj.GetComponent<Skill>().Populate(skill, i);
+        }
     }
 }
