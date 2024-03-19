@@ -43,6 +43,11 @@ public class SelectionScreen : MonoBehaviour
 
     private IEnumerator PopulateCharacters()
     {
+        foreach (Transform child in characterRoster)
+        {
+            Destroy(child.gameObject);
+        }
+
         var request = UnityWebRequest.Get(SocketManager.ConnectionUrl + CHARACTERS_ENDPOINT);
         yield return request.SendWebRequest();
         

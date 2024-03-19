@@ -60,6 +60,13 @@ public class SocketManager : MonoBehaviour
         socket.OnDisconnected += (sender, e) =>
         {
             Debug.Log("disconnect: " + e);
+            lock(executeOnMainThreadQueue)
+            {
+                executeOnMainThreadQueue.Enqueue( () =>
+                {
+                    GameManager.Instance.OpenAuthScreen();
+                });
+            }
         };
         socket.OnReconnectAttempt += (sender, e) =>
         {
