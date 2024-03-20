@@ -526,6 +526,9 @@ MonoBehaviour:
   skillRoster: {fileID: 1864813427}
   localPlayer: {fileID: 478873878036509448}
   remotePlayer: {fileID: 478873878036509447}
+  battleResultPanel: {fileID: 478873878036509451}
+  confirmBattleResultButton: {fileID: 478873878036509450}
+  battleResultText: {fileID: 478873878036509449}
 --- !u!4 &1848074936
 Transform:
   m_ObjectHideFlags: 0
@@ -774,6 +777,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b86c711ad598746aba87cf7d7792f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &478873878036509449 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1839394623590788597, guid: 0d12f6821bd05f24fb3a297260f076cb, type: 3}
+  m_PrefabInstance: {fileID: 478873878036509445}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &478873878036509450 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4314798176727856913, guid: 0d12f6821bd05f24fb3a297260f076cb, type: 3}
+  m_PrefabInstance: {fileID: 478873878036509445}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &478873878036509451 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8820300039329177871, guid: 0d12f6821bd05f24fb3a297260f076cb, type: 3}
+  m_PrefabInstance: {fileID: 478873878036509445}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3321646340011514414
 PrefabInstance:
   m_ObjectHideFlags: 0

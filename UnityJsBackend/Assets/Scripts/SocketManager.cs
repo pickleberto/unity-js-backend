@@ -100,6 +100,19 @@ public class SocketManager : MonoBehaviour
             }
         });
 
+        socket.On("battleResult", response => {
+            // we are not on the main thread, so enqueue
+            lock (executeOnMainThreadQueue)
+            {
+                executeOnMainThreadQueue.Enqueue(() =>
+                {
+                    Debug.Log("Battle Ended");
+                    Debug.Log(response);
+                    BattleManager.Instance.BattleEnded(response);
+                });
+            }
+        });
+
         socket.Connect();
     }
 
