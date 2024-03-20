@@ -12,22 +12,35 @@ public class Skill : MonoBehaviour
     [SerializeField] private TMP_Text skillDescription;
     [SerializeField] private TMP_Text manaCostText;
     [SerializeField] private TMP_Text cooldownText;
+    private Button button;
 
     private int slotPosition = -1;
 
     private void Start()
     {
-        GetComponent<Button>()?.onClick.AddListener(CastSkill);
+        button = GetComponent<Button>();
+        if (button)
+        {
+            button.onClick.AddListener(CastSkill);
+        }
     }
 
-    public void Populate(JObject data, int index)
+    public void Populate(JObject data, JObject vars, int index)
     {
         slotPosition = index;
 
         skillName.text = data["name"].ToString();
         skillDescription.text = data["description"].ToString();
         manaCostText.text = data["manaCost"].ToString();
-        cooldownText.text = data["cooldown"].ToString();
+        cooldownText.text = vars["currentCooldown"].ToString();
+
+        int skillCooldown = (int)data["cooldown"];
+        int currentCooldown = (int)vars["currentCooldown"];
+
+        if (button)
+        {
+            GetComponent<Button>().interactable = skillCooldown == currentCooldown;
+        }
 
         StartCoroutine(Utils.LoadTexture(data["imageUrl"].ToString(), skillImage));
     }

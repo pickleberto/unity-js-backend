@@ -38,10 +38,10 @@ public class BattleManager : MonoBehaviour
         localPlayer.Populate(localPlayerData);
         remotePlayer.Populate(JObject.Parse(outerData["right"].Value<string>()));
 
-        UpdateLocalPlayerSkills((JArray) localPlayerData["character"]["skills"]);
+        UpdateLocalPlayerSkills((JArray) localPlayerData["character"]["skills"], (JArray) localPlayerData["character"]["skillVars"]);
     }
 
-    void UpdateLocalPlayerSkills(JArray skills)
+    void UpdateLocalPlayerSkills(JArray skills, JArray skillsVars)
     {
         foreach(Transform child in skillRoster)
         {
@@ -51,8 +51,9 @@ public class BattleManager : MonoBehaviour
         for (int i = 0; i < skills.Count; i++)
         {
             JObject skill = (JObject)skills[i];
+            JObject vars = (JObject)skillsVars[i];
             GameObject skillObj = Instantiate(skillPrefab, skillRoster);
-            skillObj.GetComponent<Skill>().Populate(skill, i);
+            skillObj.GetComponent<Skill>().Populate(skill, vars, i);
         }
     }
 }
