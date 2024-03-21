@@ -22,6 +22,8 @@ public class BattleScreen : MonoBehaviour
     [SerializeField] private Button confirmBattleResultButton;
     [SerializeField] private TMP_Text battleResultText;
 
+    private Coroutine timerCoroutine = null;
+
     private void Start()
     {
         confirmBattleResultButton.onClick.AddListener(() => { GameManager.Instance.OpenSelectScreen(); });
@@ -29,22 +31,26 @@ public class BattleScreen : MonoBehaviour
 
     public void InitScreen()
     {
-
         battleResultPanel.SetActive(false);
     }
 
     public void StartTurn(int turnTime)
     {
-        StartCoroutine(UpdateTurnTimer(turnTime));
-    }
+        if(timerCoroutine != null)
+        {
+            StopCoroutine(timerCoroutine);
+        }
 
+        timerCoroutine = StartCoroutine(UpdateTurnTimer(turnTime));
+    }
 
     private IEnumerator UpdateTurnTimer(int turnTime)
     {
-        for (int i = turnTime; i >= 0; i--)
+        turnTimeText.text = "New Turn";
+        for (int i = turnTime - 1; i > 0; i--)
         {
-            turnTimeText.text = "" + i;
             yield return new WaitForSeconds(1);
+            turnTimeText.text = "" + i;
         }
     }
 
