@@ -67,5 +67,20 @@ public class UserInfo
 
 public class SkillData
 {
+    public int SkillSlot { get; set; }
+    public string Name { get; set; }
+    public string Description { get; set; }
+    public int ManaCost { get; set; }
+    public int Cooldown { get; set; }
+    public int CurrentCooldown { get; set; }
+    public string ImageUrl { get; set; }
+}
 
+public class BattleCharacterData
+{
+    public string PlayerName { get; set; }
+    public string CharacterName { get; set; }
+    public string ImageUrl { get; set; }
+    public int Health { get; set; }
+    public int Mana { get; set; }
 }

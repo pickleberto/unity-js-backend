@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Newtonsoft.Json.Linq;
 
 public class Skill : MonoBehaviour
 {
@@ -25,24 +24,24 @@ public class Skill : MonoBehaviour
         }
     }
 
-    public void Populate(JObject data, JObject vars, int index)
+    public void Populate(SkillData data)
     {
-        slotPosition = index;
+        slotPosition = data.SkillSlot;
 
-        skillName.text = data["name"].ToString();
-        skillDescription.text = data["description"].ToString();
-        manaCostText.text = data["manaCost"].ToString();
-        cooldownText.text = vars["currentCooldown"].ToString();
+        skillName.text = data.Name;
+        skillDescription.text = data.Description;
+        manaCostText.text = data.ManaCost.ToString();
+        cooldownText.text = data.CurrentCooldown.ToString();
 
-        int skillCooldown = (int)data["cooldown"];
-        int currentCooldown = (int)vars["currentCooldown"];
+        int skillCooldown = data.Cooldown;
+        int currentCooldown = data.CurrentCooldown;
 
         if (button)
         {
             GetComponent<Button>().interactable = skillCooldown == currentCooldown;
         }
 
-        StartCoroutine(Utils.LoadTexture(data["imageUrl"].ToString(), skillImage));
+        StartCoroutine(Utils.LoadTexture(data.ImageUrl, skillImage));
     }
 
     private void CastSkill()
