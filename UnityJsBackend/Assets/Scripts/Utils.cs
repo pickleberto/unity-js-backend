@@ -7,8 +7,15 @@ using Newtonsoft.Json.Linq;
 
 public class Utils 
 {
+    private static Dictionary<string, Sprite> spriteChache = new Dictionary<string, Sprite>();
     public static IEnumerator LoadTexture(string imgUrl, Image imgComponent)
     {
+        if(spriteChache.TryGetValue(imgUrl, out Sprite cachedSprite))
+        {
+            imgComponent.sprite = cachedSprite;
+            yield break;
+        }
+
         UnityWebRequest request = UnityWebRequestTexture.GetTexture(imgUrl);
         yield return request.SendWebRequest();
         if (request.result != UnityWebRequest.Result.Success)
@@ -20,7 +27,9 @@ public class Utils
         Texture2D texture = ((DownloadHandlerTexture)request.downloadHandler).texture;
         if (texture != null)
         {
-            imgComponent.sprite = Sprite.Create(texture, new Rect(0,0,texture.width, texture.height), new Vector2(.5f,.5f));
+            Sprite downloadedSprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(.5f, .5f));
+            imgComponent.sprite = downloadedSprite;
+            spriteChache.Add(imgUrl, downloadedSprite);
         }
         else
         {
