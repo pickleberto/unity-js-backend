@@ -93,5 +93,4 @@ public class SelectionScreen : MonoBehaviour
         GameManager.Instance.OpenLoadingScreen();
         SocketManager.Instance.SearchBattle(selectedCharID);
     }
-
 }

@@ -63,6 +63,7 @@ public class BattleScreen : MonoBehaviour
         if (timerCoroutine != null)
         {
             StopCoroutine(timerCoroutine);
+            timerCoroutine = null;
         }
     }
 

@@ -87,6 +87,20 @@ public class SocketManager : MonoBehaviour
             }
         });
 
+        socket.On("noMatch", response =>
+        {
+            // we are not on the main thread, so enqueue
+            lock (executeOnMainThreadQueue)
+            {
+                executeOnMainThreadQueue.Enqueue(() =>
+                {
+                    Debug.Log("No match");
+                    Debug.Log(response);
+                    GameManager.Instance.CloseLoadingScreen();
+                });
+            }
+        });
+
         socket.On("turnResult", response => {
             // we are not on the main thread, so enqueue
             lock (executeOnMainThreadQueue)
