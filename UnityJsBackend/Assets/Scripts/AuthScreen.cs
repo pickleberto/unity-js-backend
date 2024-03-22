@@ -19,6 +19,10 @@ public class AuthScreen : MonoBehaviour
     [SerializeField] private TMP_InputField registerEmail;
     [SerializeField] private TMP_InputField registerPassword;
     [SerializeField] private Button registerButton;
+    
+    [Header("Messages")]
+    [SerializeField] private TMP_Text errorsText;
+    [SerializeField] private GameObject successObj;
 
     private readonly string REGISTER_ENDPOINT = "/api/auth/local/register";
     private readonly string LOGIN_ENDPOINT = "/api/auth/local";
@@ -27,6 +31,7 @@ public class AuthScreen : MonoBehaviour
     {
         loginButton.onClick.AddListener(Login);
         registerButton.onClick.AddListener(Register);
+        HideMessages();
     }
 
     public void Login()
@@ -57,24 +62,72 @@ public class AuthScreen : MonoBehaviour
 
     public void Register()
     {
+        HideMessages();
+        StartCoroutine(RegisterNewUserRequest());
+    }
+
+    IEnumerator RegisterNewUserRequest()
+    {
         var request = new UnityWebRequest(SocketManager.ConnectionUrl + REGISTER_ENDPOINT, "POST");
-        
-        string json = 
+
+        string json =
             "{"
-            +"\"username\":\""+registerUsername.text+"\","
+            + "\"username\":\"" + registerUsername.text + "\","
             + "\"email\":\"" + registerEmail.text + "\","
             + "\"password\":\"" + registerPassword.text + "\""
             + "}";
         Debug.Log(json);
 
-        byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(json);
+        byte[] bodyRaw = Encoding.UTF8.GetBytes(json);
 
         request.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
         request.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
         request.SetRequestHeader("Content-Type", "application/json");
         request.SetRequestHeader("Accept", "application/json");
-        request.SendWebRequest();
 
-        //TODO: handle errors
+        yield return request.SendWebRequest();
+
+        if (request.result != UnityWebRequest.Result.Success)
+        {
+            ShowErrors(request);            
+        }
+        else
+        {
+            Debug.Log("Register success: " + request.downloadHandler.text);
+            successObj.SetActive(true);
+        }
+    }
+
+    private void ShowErrors(UnityWebRequest request)
+    {
+        successObj.SetActive(false);
+
+        StringBuilder errorsStr = new StringBuilder();
+        
+        var errorJSON = JObject.Parse(request.downloadHandler.text);
+        var errorsList = (JArray) errorJSON["error"]["details"]["errors"];
+
+        if(errorsList != null)
+        {
+            foreach(JObject error in errorsList)
+            {
+                 errorsStr.AppendLine(error["message"].ToString());
+            }
+        }
+        else
+        {
+            errorsStr.AppendLine(errorJSON["error"]["message"].ToString());
+        }
+
+        errorsText.text = errorsStr.ToString();
+        errorsText.transform.parent.gameObject.SetActive(true);
+        Debug.Log("request failed: " + errorsStr.ToString());
+    }
+
+    private void HideMessages()
+    {
+        errorsText.text = "";
+        errorsText.transform.parent.gameObject.SetActive(false);
+        successObj.SetActive(false);
     }
 }
