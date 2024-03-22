@@ -95,7 +95,7 @@ public class SocketManager : MonoBehaviour
                 {
                     Debug.Log("Next Turn");
                     Debug.Log(response);
-                    BattleManager.Instance.StartBattle(response);
+                    BattleManager.Instance.StartTurn(response);
                 });
             }
         });

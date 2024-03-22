@@ -25,7 +25,12 @@ public class BattleManager : MonoBehaviour
     public void StartBattle(SocketIOResponse resp)
     {
         GameManager.Instance.OpenBattleScreen();
-        
+        battleScreen.InitScreen();
+        StartTurn(resp);
+    }
+
+    public void StartTurn(SocketIOResponse resp)
+    {
         JObject outerData = JObject.Parse(resp.GetValue<JObject>().ToString());
 
         var localPlayerData = JObject.Parse(outerData["left"].Value<string>());
@@ -33,8 +38,8 @@ public class BattleManager : MonoBehaviour
 
         battleScreen.SetLocalPlayer(Utils.ParseCharacter(localPlayerData));
         battleScreen.SetRemotePlayer(Utils.ParseCharacter(remotePlayerData));
-        
-        UpdateLocalPlayerSkills((JArray) localPlayerData["character"]["skills"], (JArray) localPlayerData["character"]["skillVars"]);
+
+        UpdateLocalPlayerSkills((JArray)localPlayerData["character"]["skills"], (JArray)localPlayerData["character"]["skillVars"]);
 
         var turnTime = outerData["turnTime"].Value<int>();
         battleScreen.StartTurn(turnTime);

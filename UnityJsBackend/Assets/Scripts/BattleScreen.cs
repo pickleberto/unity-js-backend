@@ -36,11 +36,7 @@ public class BattleScreen : MonoBehaviour
 
     public void StartTurn(int turnTime)
     {
-        if(timerCoroutine != null)
-        {
-            StopCoroutine(timerCoroutine);
-        }
-
+        StopTimer();
         timerCoroutine = StartCoroutine(UpdateTurnTimer(turnTime));
     }
 
@@ -56,9 +52,18 @@ public class BattleScreen : MonoBehaviour
 
     public void EndBattle(string result)
     {
+        StopTimer();
+        turnTimeText.text = "";
         battleResultText.text = "You " + result;
-
         battleResultPanel.SetActive(true);
+    }
+
+    private void StopTimer()
+    {
+        if (timerCoroutine != null)
+        {
+            StopCoroutine(timerCoroutine);
+        }
     }
 
     public void UpdateLocalPlayerSkills(List<SkillData> skills)
