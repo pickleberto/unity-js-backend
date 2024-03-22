@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject authScreen;
     [SerializeField] private GameObject selectScreen;
     [SerializeField] private GameObject battleScreen;
+    [SerializeField] private GameObject loadingScreen;
 
     private void Awake()
     {
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
     {
         selectScreen.SetActive(false);
         battleScreen.SetActive(false);
+        CloseLoadingScreen();
 
         authScreen.SetActive(true);
     }
@@ -49,6 +51,7 @@ public class GameManager : MonoBehaviour
     {
         authScreen.SetActive(false);
         battleScreen.SetActive(false);
+        CloseLoadingScreen();
 
         selectScreen.SetActive(true);
     }
@@ -57,7 +60,18 @@ public class GameManager : MonoBehaviour
     {
         authScreen.SetActive(false);
         selectScreen.SetActive(false);
+        CloseLoadingScreen();
 
         battleScreen.SetActive(true);
+    }
+
+    public void OpenLoadingScreen()
+    {
+        loadingScreen.SetActive(true);
+    }
+
+    public void CloseLoadingScreen()
+    {
+        loadingScreen.SetActive(false);
     }
 }

@@ -90,6 +90,7 @@ public class SelectionScreen : MonoBehaviour
 
     private void SearchBattle()
     {
+        GameManager.Instance.OpenLoadingScreen();
         SocketManager.Instance.SearchBattle(selectedCharID);
     }
 

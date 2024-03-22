@@ -36,6 +36,7 @@ public class AuthScreen : MonoBehaviour
 
     public void Login()
     {
+        GameManager.Instance.OpenLoadingScreen();
         StartCoroutine(SendLoginRequest());
     }
 
@@ -63,6 +64,7 @@ public class AuthScreen : MonoBehaviour
     public void Register()
     {
         HideMessages();
+        GameManager.Instance.OpenLoadingScreen();
         StartCoroutine(RegisterNewUserRequest());
     }
 
@@ -86,6 +88,8 @@ public class AuthScreen : MonoBehaviour
         request.SetRequestHeader("Accept", "application/json");
 
         yield return request.SendWebRequest();
+
+        GameManager.Instance.CloseLoadingScreen();
 
         if (request.result != UnityWebRequest.Result.Success)
         {

@@ -1,8 +1,6 @@
 # unity-js-backend
 Online repo for the Unity frontend with nodejs backend course.
 
-## TODO
+This is the frontend for a game that communicates with /node-game-backend/ (the backend server).
 
-* display screen while waiting for server responses (matchmaking, login, opponents turn);
-
-
+Players can register themselves, login and search for an opponent before entering the battle.
