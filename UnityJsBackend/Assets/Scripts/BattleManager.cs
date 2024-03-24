@@ -63,6 +63,8 @@ public class BattleManager : MonoBehaviour
     {
         JObject outerData = JObject.Parse(resp.GetValue<JObject>().ToString());
 
+        GameManager.Instance.UpdateUserHistory(outerData["userWins"].Value<int>(), outerData["userLosses"].Value<int>());
+
         battleScreen.EndBattle(outerData["battleResult"].Value<string>());
     }
 

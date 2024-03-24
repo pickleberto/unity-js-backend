@@ -38,6 +38,12 @@ public class GameManager : MonoBehaviour
         OpenSelectScreen();
     }
 
+    public void UpdateUserHistory(int wins, int losses)
+    {
+        User.Wins = wins;
+        User.Losses = losses;
+    }
+
     public void OpenAuthScreen()
     {
         selectScreen.SetActive(false);

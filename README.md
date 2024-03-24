@@ -9,4 +9,3 @@ Players can register themselves, login and search for an opponent before enterin
 
 * fix character size on character roster to scale with screen size;
 * display turn count;
-* reload user info after battle;

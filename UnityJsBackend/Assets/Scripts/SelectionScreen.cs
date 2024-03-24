@@ -75,7 +75,7 @@ public class SelectionScreen : MonoBehaviour
     {
         usernameText.text = GameManager.Instance.User.UserName;
         xpText.text = GameManager.Instance.User.Experience + " XP";
-        winLossText.text = GameManager.Instance.User.Wins + ":" + GameManager.Instance.User.Losses;
+        winLossText.text = GameManager.Instance.User.Wins + " W - " + GameManager.Instance.User.Losses + " L";
     }
 
     private void SetSelectedCharacter(CharacterData selected, Sprite img)
