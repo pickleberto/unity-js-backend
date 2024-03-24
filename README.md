@@ -9,4 +9,4 @@ Players can register themselves, login and search for an opponent before enterin
 
 * fix character size on character roster to scale with screen size;
 * display turn count;
-* fix skill/cooldown image to be unavailable when skill is on cooldown;
+* reload user info after battle;
