@@ -7,5 +7,4 @@ Players can register themselves, login and search for an opponent before enterin
 
 ## TODO
 
-* fix character size on character roster to scale with screen size;
 * display turn count;

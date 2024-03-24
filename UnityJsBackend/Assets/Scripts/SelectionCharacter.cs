@@ -19,6 +19,7 @@ public class SelectionCharacter : MonoBehaviour
         characterData = data;
         characterName.text = data.Attributes.Name;
         characterDescription.text = data.Attributes.Description;
+        transform.localScale = new Vector3(1, 1, 1);
         StartCoroutine(Utils.LoadTexture(data.Attributes.ImageUrl, characterImage));
     }
 
