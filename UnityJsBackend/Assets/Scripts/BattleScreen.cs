@@ -8,6 +8,7 @@ public class BattleScreen : MonoBehaviour
 {
     [Header("Turn info")]
     [SerializeField] private TMP_Text turnTimeText;
+    [SerializeField] private TMP_Text turnCountText;
 
     [Header("Players")]
     [SerializeField] private BattleCharacter localPlayer;
@@ -34,9 +35,10 @@ public class BattleScreen : MonoBehaviour
         battleResultPanel.SetActive(false);
     }
 
-    public void StartTurn(int turnTime)
+    public void StartTurn(int turnTime, int turnCount)
     {
         StopTimer();
+        turnCountText.text = turnCount.ToString();
         timerCoroutine = StartCoroutine(UpdateTurnTimer(turnTime));
     }
 

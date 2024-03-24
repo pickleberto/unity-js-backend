@@ -42,7 +42,8 @@ public class BattleManager : MonoBehaviour
         UpdateLocalPlayerSkills((JArray)localPlayerData["character"]["skills"], (JArray)localPlayerData["character"]["skillVars"]);
 
         var turnTime = outerData["turnTime"].Value<int>();
-        battleScreen.StartTurn(turnTime);
+        var turnCount = outerData["turnCount"].Value<int>();
+        battleScreen.StartTurn(turnTime, turnCount);
     }
 
     private void UpdateLocalPlayerSkills(JArray skills, JArray skillsVars)
